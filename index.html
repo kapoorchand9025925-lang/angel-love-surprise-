@@ -78,7 +78,7 @@ document.getElementById('noBtn').addEventListener('click', () => {
   el.textContent = messages[Math.floor(Math.random() * messages.length)];
 });
 document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.next)));
-document.getElementById('replayBtn').addEventListener('click', () => showPage('page-home'));
+document.getElementById('yesBtn').addEventListener('click', () => showPage('page-poetry'));
 const photos = [
   "memory-01[1].jpg",
   "memory-02[1].jpg",
