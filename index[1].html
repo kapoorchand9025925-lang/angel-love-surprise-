@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffeff5">
+<title>For Angel 💗 — from Ankit</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="floating-hearts" aria-hidden="true"></div>
+<main class="app">
+  <div class="tiny-label">A LITTLE SURPRISE FOR YOU ✨</div>
+  <section class="page active" id="page-home">
+    <div class="hero-heart">💗</div>
+    <p class="eyebrow">Hey, Angel…</p>
+    <h1>Do you love me?</h1>
+    <p class="sub">I made a tiny corner of the internet just for you. 🌷</p>
+    <div class="buttons">
+      <button class="btn primary" id="yesBtn">YES, Ankit! 💖</button>
+      <button class="btn soft" id="noBtn">No 🙈</button>
+    </div>
+    <p class="tiny-note" id="noMessage" aria-live="polite"></p>
+  </section>
+
+  <section class="page" id="page-poetry">
+    <p class="eyebrow">For my Angel 🌹</p>
+    <h2>Thodi si shayari, sirf tumhare liye</h2>
+    <article class="poem-card">
+      <div class="flower">🌸</div>
+      <p>तुम्हारी मुस्कान से मेरी सुबह रोशन हो जाती है,<br>
+      तुम्हारी एक बात से मेरी दुनिया सज जाती है।<br>
+      दूर रहकर भी तुम दिल के पास रहती हो,<br>
+      मेरी हर प्यारी दुआ में बस तुम ही आती हो। 💗</p>
+    </article>
+    <article class="poem-card alt">
+      <div class="flower">✨</div>
+      <p>ना चाँद चाहिए, ना सितारों की फरमाइश है,<br>
+      तुम्हारे साथ हँसना ही मेरी सबसे प्यारी ख्वाहिश है।<br>
+      हर दिन तुम्हें इज़्ज़त और खुशी दे पाऊँ,<br>
+      बस इतना-सा सपना, Angel, मैं सजाऊँ। ❤️</p>
+    </article>
+    <button class="btn primary full" data-next="page-gallery">Our little memories 📸</button>
+  </section>
+
+  <section class="page" id="page-gallery">
+    <p class="eyebrow">Little moments, big feelings 💞</p>
+    <h2>My Angel's Gallery</h2>
+    <p class="sub">A few moments that deserve their own little frame.</p>
+    <div class="gallery" id="gallery"></div>
+    <button class="btn primary full" data-next="page-letter">One last thing… 💌</button>
+  </section>
+
+  <section class="page" id="page-letter">
+    <div class="envelope">💌</div>
+    <p class="eyebrow">A note from Ankit</p>
+    <h2>Dear Angel,</h2>
+    <div class="letter">
+      <p>तुम मेरे लिए बहुत खास हो। तुम्हारी खुशी, तुम्हारी मुस्कान और तुम्हारे सपने मायने रखते हैं।</p>
+      <p>मैं चाहता हूँ कि हमारे बीच हमेशा प्यार के साथ-साथ भरोसा, इज़्ज़त और खुलकर बात करने की जगह भी रहे। हर दिन perfect हो, ज़रूरी नहीं—बस हम एक-दूसरे को समझने की कोशिश करते रहें।</p>
+      <p>Thank you for being you. You make ordinary moments feel special. 💗</p>
+      <p class="signature">Always cheering for you,<br><strong>Ankit ❤️</strong></p>
+    </div>
+    <button class="btn soft full" id="replayBtn">Read it again ↺</button>
+    <p class="footer-note">Made with lots of pink hearts, just for Angel 🌷</p>
+  </section>
+</main>
+<script>
+const pages = [...document.querySelectorAll('.page')];
+function showPage(id) {
+  pages.forEach(p => p.classList.toggle('active', p.id === id));
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+document.getElementById('yesBtn').addEventListener('click', () => showPage('page-poetry'));
+document.getElementById('noBtn').addEventListener('click', () => {
+  const messages = ["Ek baar phir soch lo? 🥺💗", "Maine itni mehnat se banaya… 🙈", "No pressure—bas tumhari smile chahiye 🌷"];
+  const el = document.getElementById('noMessage');
+  el.textContent = messages[Math.floor(Math.random() * messages.length)];
+});
+document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.next)));
+document.getElementById('replayBtn').addEventListener('click', () => showPage('page-home'));
+const photos = ["photos/memory-01.jpg", "photos/memory-02.jpg", "photos/memory-03.jpg", "photos/memory-04.jpg", "photos/memory-05.jpg", "photos/memory-06.jpg", "photos/memory-07.jpg", "photos/memory-08.jpg", "photos/memory-09.jpg", "photos/memory-10.jpg"];
+const gallery = document.getElementById('gallery');
+photos.forEach((src, i) => {
+  const figure = document.createElement('figure');
+  figure.className = 'photo-card';
+  const img = document.createElement('img');
+  img.src = src; img.alt = `Angel memory ${i+1}`; img.loading = 'lazy';
+  const cap = document.createElement('figcaption');
+  cap.textContent = ['A little sparkle ✨','Pretty memories 🌷','That lovely smile 💗','A moment to keep 💌'][i % 4];
+  figure.append(img, cap); gallery.appendChild(figure);
+});
+for (let i=0;i<18;i++) {
+  const h=document.createElement('span'); h.textContent=['♡','♥','✧'][i%3];
+  h.style.left=(Math.random()*100)+'%'; h.style.animationDelay=(Math.random()*10)+'s';
+  h.style.animationDuration=(9+Math.random()*8)+'s';
+  document.querySelector('.floating-hearts').appendChild(h);
+}
+</script>
+</body>
+</html>

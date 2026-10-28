@@ -1,0 +1,25 @@
+*{box-sizing:border-box} :root{--pink:#ff6f9f;--deep:#a83263;--pale:#fff1f6;--ink:#52283a}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:radial-gradient(circle at top,#fff 0,#fff0f6 45%,#ffe0ec 100%);overflow-x:hidden}
+.app{position:relative;z-index:1;width:min(720px,100%);margin:auto;padding:30px 18px 48px;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+.tiny-label{font-size:.72rem;letter-spacing:.18em;color:#b95d7e;font-weight:800;margin:5px 0 22px;text-align:center}
+.page{display:none;width:100%;text-align:center;animation:appear .5s ease}.page.active{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.hero-heart{font-size:5rem;filter:drop-shadow(0 8px 12px #ff9cbd66);animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.eyebrow{color:#c14d7b;font-weight:750;letter-spacing:.04em;margin:12px 0 8px}
+h1{font-size:clamp(2.5rem,9vw,4.6rem);line-height:1.05;margin:8px 0 16px;color:#a83263}
+h2{font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.15;margin:8px 0 18px;color:#a83263}
+.sub{color:#875b6d;line-height:1.6;max-width:480px;margin:0 auto 24px}
+.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:26px 0 12px}
+.btn{border:0;border-radius:999px;padding:14px 23px;font-weight:800;font-size:1rem;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.btn:active{transform:scale(.97)}.primary{color:white;background:linear-gradient(135deg,#ff78a6,#e84983);box-shadow:0 9px 22px #e8498333}.soft{color:#a83263;background:#fff;border:1px solid #ffc1d5;box-shadow:0 5px 16px #b64e7820}.full{width:min(100%,420px);margin:22px auto 0}
+.tiny-note{min-height:24px;color:#ad3b6c;font-size:.9rem}
+.poem-card{max-width:560px;margin:16px auto;padding:24px 20px;border:1px solid #ffd0df;border-radius:24px;background:#ffffffc9;box-shadow:0 12px 35px #a8326310;line-height:1.95;font-size:1.05rem}
+.poem-card.alt{background:#fff7fa}.flower{font-size:1.7rem}.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:24px 0}
+.photo-card{margin:0;padding:9px 9px 13px;background:#fff;border-radius:12px;box-shadow:0 8px 22px #7b30401c;transform:rotate(var(--tilt, -1deg));border:1px solid #ffe0e9}
+.photo-card:nth-child(even){--tilt:1.5deg}.photo-card img{width:100%;height:250px;object-fit:cover;border-radius:7px;display:block;background:#ffe8f0}
+.photo-card figcaption{font-family:Georgia,serif;font-style:italic;color:#a34b6d;padding-top:10px;font-size:.9rem}
+.envelope{font-size:4rem;margin:12px}.letter{max-width:570px;text-align:left;margin:0 auto;background:#fffdfd;border:1px solid #ffd3e1;border-radius:22px;padding:24px;line-height:1.85;box-shadow:0 12px 35px #a8326310}.signature{text-align:right;color:#a83263;margin-top:24px}.footer-note{font-size:.85rem;color:#a85b78;margin-top:24px}
+.floating-hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}.floating-hearts span{position:absolute;bottom:-40px;color:#f18ab0;opacity:.4;font-size:20px;animation:floatUp linear infinite}
+@keyframes floatUp{to{transform:translateY(-115vh) rotate(30deg);opacity:0}}
+@media(max-width:430px){.app{padding:22px 15px 38px}.photo-card img{height:205px}.poem-card{padding:20px 14px;font-size:.98rem}.letter{padding:20px}}
