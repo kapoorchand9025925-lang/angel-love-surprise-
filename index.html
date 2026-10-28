@@ -79,7 +79,17 @@ document.getElementById('noBtn').addEventListener('click', () => {
 });
 document.querySelectorAll('[data-next]').forEach(b => b.addEventListener('click', () => showPage(b.dataset.next)));
 document.getElementById('replayBtn').addEventListener('click', () => showPage('page-home'));
-const photos = ["photos/memory-01.jpg", "photos/memory-02.jpg", "photos/memory-03.jpg", "photos/memory-04.jpg", "photos/memory-05.jpg", "photos/memory-06.jpg", "photos/memory-07.jpg", "photos/memory-08.jpg", "photos/memory-09.jpg", "photos/memory-10.jpg"];
+const photos = [
+  "memory-01[1].jpg",
+  "memory-02[1].jpg",
+  "memory-03[1].jpg",
+  "memory-04[1].jpg",
+  "memory-05[1].jpg",
+  "memory-06[1].jpg",
+  "memory-07[1].jpg",
+  "memory-08[1].jpg",
+  "memory-09[1].jpg",
+  "memory-10[1].jpg"
 const gallery = document.getElementById('gallery');
 photos.forEach((src, i) => {
   const figure = document.createElement('figure');
